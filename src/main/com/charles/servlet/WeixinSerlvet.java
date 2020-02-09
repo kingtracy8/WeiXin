@@ -1,5 +1,6 @@
 package com.charles.servlet;
 
+import com.charles.po.NewsMessage;
 import com.charles.po.TextMessage;
 import com.charles.util.CheckUtil;
 import com.charles.util.MessageUtil;
@@ -70,11 +71,15 @@ public class WeixinSerlvet extends HttpServlet {
 
                 } else if ("2".equals(Content)) {
 
-                    replyMsg = MessageUtil.initText(FromUserName, ToUserName, MessageUtil.SecondMenuText());
+//                    replyMsg = MessageUtil.initText(FromUserName, ToUserName, MessageUtil.SecondMenuText());
+
+                    replyMsg = MessageUtil.initNewsMessage(FromUserName, ToUserName);
+
+                    System.out.println(replyMsg);
                 } else if ("?".equals(Content) || "？".equals(Content)) {
                     replyMsg = MessageUtil.initText(FromUserName, ToUserName, MessageUtil.HelpMenuText());
-                }else{
-                    replyMsg = MessageUtil.initText(FromUserName,ToUserName,"对不起，没有这个选项，请回复？按照菜单提示操作。");
+                } else {
+                    replyMsg = MessageUtil.initText(FromUserName, ToUserName, "对不起，没有这个选项，请回复？按照菜单提示操作。");
                 }
 
 
