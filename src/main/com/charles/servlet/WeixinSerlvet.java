@@ -77,13 +77,6 @@ public class WeixinSerlvet extends HttpServlet {
                     replyMsg = MessageUtil.initText(FromUserName,ToUserName,"对不起，没有这个选项，请回复？按照菜单提示操作。");
                 }
 
-//                replyText.setFromUserName(ToUserName);
-//                replyText.setToUserName(FromUserName);
-//                replyText.setContent("您发送的消息是："+Content);
-//                replyText.setMsgType("text");
-//                replyText.setCreateTime(String.valueOf(new Date().getTime()));
-//                replyMsg = MessageUtil.textMessageToXml(replyText);
-//                System.out.println(replyMsg);
 
             } else if (MessageUtil.MESSAGE_EVENT.equals(MsgType)) {
                 //假如是关注事件
